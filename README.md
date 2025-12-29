@@ -4,6 +4,9 @@
 A Python library for [bitkub.com](https://github.com/bitkub/bitkub-official-api-docs) API
 
 ## Releases
+  * ```2025-12-28``` version ```3.2.1```
+    * update to api v3/v4
+    * backword compatible to api v2 results
   * ```2023-12-14``` version ```3.1.4```
     * change sym from quote_base to base_quote
   * ```2023-12-11``` version ```3.1.3```
@@ -13,15 +16,6 @@ A Python library for [bitkub.com](https://github.com/bitkub/bitkub-official-api-
   * ```2023-03-29``` version ```2.1.0```
     * switch to api v2 in [Create buy order](#createbuyorder), [Create sell order](#createsellorder) and [Cancel order](#cancelorder) 
     * remove [Create sell order by fiat](#createsellorderfiat), Deprecated at 2023-03-27
-  * ```2022-01-07``` version ```1.1.0```
-    * add [Create buy order test](#createbuyordertest)
-    * add [Create sell order test](#createsellordertest)
-    * [Viewing tradingview history](#viewingtradingviewhistory) endpoint is now deprecated and will be updated with a new endpoint soon. The old endpoint will always return empty result.
-    * include is_maker in [My order history](#myorderhistory)
-    * removed address and instead include from_address and to_address in [Crypto deposit history](#cryptodeposithistory)
-    * add [Crypto internal withdraw](#cryptinternalowithdraw)
-    * include partial_filled and remaining in [Order info](#orderinfo)
-  * ```2020-04-02``` version ```1.0.3``` add [generate-address](#cryptogenerateaddress) method
 
 ## Table of Contents
 
@@ -52,7 +46,7 @@ A Python library for [bitkub.com](https://github.com/bitkub/bitkub-official-api-
   - [Order info](#orderinfo)
   - [Crypto addresses](#cryptoaddressses)
   - [Crypto withdraw](#cryptowithdraw)
-  - [Crypto internal withdraw](#cryptinternalowithdraw)
+  - [Crypto internal withdraw](#cryptointernalwithdraw)
   - [Crypto deposit history](#cryptodeposithistory)
   - [Crypto withdraw history](#cryptowithdrawhistory)
   - [Crypto generate address](#cryptogenerateaddress)
@@ -84,7 +78,7 @@ A Python library for [bitkub.com](https://github.com/bitkub/bitkub-official-api-
     # initial obj non-secure and secure
     bitkub = Bitkub(api_key=API_KEY, api_secret=API_SECRET)
 
-You can find API KEY and API SECRET from [here](https://www.bitkub.com/publicapi).
+You can find API KEY and API SECRET from [here](https://www.bitkub.com/th/api-management).
 
 ### Set API key and API secret <a name="api_key"></a>
   If you initial obj with only non-secure. You can set up API key and API secret on below.
@@ -95,6 +89,9 @@ You can find API KEY and API SECRET from [here](https://www.bitkub.com/publicapi
     bitkub = Bitkub()
     bitkub.set_api_key(API_KEY)
     bitkub.set_api_secret(API_SECRET)
+
+    # use latest offical api
+    bitkub.latest_bitkub_official_api()
 
 ### Viewing status <a name="viewingstatus"></a>
 
@@ -288,6 +285,7 @@ List open sell orders.
 
 
 ### Viewing books <a name="viewingbooks"></a>
+<span style="color:white;background:red;"> ⚠️ This API is <strong style="color:yellow;">deprecated.</strong> (2025-12-09) </span>
 
 List all open orders.
 
@@ -773,7 +771,7 @@ Get information regarding the specified order. ```Required initial secure obj```
       }
 
 
-### Crypto addresses<a name="cryptoaddress"></a>
+### Crypto addresses<a name="cryptoaddressses"></a>
 
 List all crypto addresses. ```Required initial secure obj```
 
@@ -835,6 +833,7 @@ Make a withdrawal to a trusted address. ```Required initial secure obj```
 
 
 ### Crypto internal withdraw<a name="cryptointernalwithdraw"></a>
+<span style="color:white;background:red;"> ⚠️ This API is <strong style="color:yellow;">deprecated.</strong> (2025-12-09) </span>
 
 Make a withdrawal to a trusted address. ```Required initial secure obj```
 

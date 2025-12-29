@@ -5,8 +5,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name='bitkub-v2',
-    version='3.1.4',
-    description='A Python library for Bitkub API v3',
+    version='3.2.1',
+    description='A Python library backward compatibility for Bitkub API v2 and latest Bitkub official API',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/appcorner/bitkub',
